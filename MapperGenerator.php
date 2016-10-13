@@ -138,7 +138,10 @@ class Product  {
 
         for ( $i = 0 ; $i < sizeof($fields) ; $i++ ) {
 
-            $content .= "\t\t\t'".$fields[$i]."' => $"."data['".$fields[$i]."'] ";
+            
+            //$content .= "\t\t\t'".$fields[$i]."' => $"."data['".$fields[$i]."'] ";
+            $content .= "\t\t\t'".$fields[$i]."' => ( isset ($"."data['".$fields[$i]."'] ) ? $"."data['".$fields[$i]."'] : null)  ";
+
             if( $i < ( sizeof( $fields ) -1  ) )
             {
                 $content .= " , \n ";
